@@ -2,22 +2,6 @@
 
 This is the finance tracker app from the Complete Ruby on Rails Developer course
 
-Things you may want to cover:
+* Rails 6.1.3.2
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* ruby 3.0.0p0
