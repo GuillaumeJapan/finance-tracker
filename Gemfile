@@ -10,6 +10,8 @@ gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
 # IEXCloud
 gem 'iex-ruby-client'
+# Font Awesome icones
+gem "font-awesome-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
