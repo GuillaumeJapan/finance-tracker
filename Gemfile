@@ -44,6 +44,10 @@ group :development, :test do
 end
 
 group :development do
+  # Hirb get a tabular view of table records in the console
+  gem 'hirb'
+  # A Ruby language server featuring code completion, intellisense, and inline documentation.
+  gem 'solargraph'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
