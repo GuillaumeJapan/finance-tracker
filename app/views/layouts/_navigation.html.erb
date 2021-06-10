@@ -11,10 +11,10 @@
           <%= link_to "My portfolio", my_portfolio_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+          <%= form_with url: search_stock_path, class: "form-inline my-2 my-lg-0", local: false, method: :get do |form| %>
+            <%= form.text_field :stock, placeholder: "Stock ticker symbol", class: "form-control", autocomplete: "off" %> 
+            <%= form.submit "Search", class: "btn btn-outline-success" %>
+          <% end %>
         </li>
       </ul>
 
