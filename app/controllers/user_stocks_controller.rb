@@ -11,7 +11,7 @@ class UserStocksController < ApplicationController
       stock_to_track.save
     end
     current_user.stocks << stock_to_track
-  rescue ActiveRecord::RecordInvalid => invalid
+  rescue ActiveRecord::RecordInvalid => invalid # when a validation does not meet the criterias
     flash[:alert] = invalid.message
   rescue => e
     flash[:alert] = e.message

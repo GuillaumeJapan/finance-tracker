@@ -1,0 +1,4 @@
+document.querySelector('#results-friends').innerHTML = "<%= j render 'users/result_friends.html' %>"  
+/* j (which is an alias for the escape_javascript method) is used to escape whatever will be returned by the ruby code 
+   to make sure that everything between the quotes will be valid and that the string will not be broken. Example:
+   document.querySelector("#reviews").innerHTML = "<a href="/mycontroller/myaction">Action!</a>" */

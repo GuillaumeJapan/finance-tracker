@@ -1,0 +1,23 @@
+<h1>My friends</h1>
+
+<div class="search-area">
+  <h3>Search friends</h3>
+  <%= form_with url: search_friends_path, local: false, method: :get do |form| %>
+    <div class="form-group row">
+      <div class="col-sm-9 no-right-padding">
+        <%= form.text_field :to_search, placeholder: "Name or Email", autofocus: true, class: "form-control form-control-lg", autocomplete: "off" %>        
+      </div>
+      <div class="col-sm-3 no-left-padding">
+        <%= button_tag class: "btn btn-success" do %>
+          <%= fa_icon "search 2x" %>
+        <% end %> 
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<!-- For JS results -->
+<div id="results-friends">
+</div>
+
+<%= render 'friends/list_friends' %>

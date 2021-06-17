@@ -1,0 +1,31 @@
+<!-- Friends followed by the user -->
+<h3>Friends followed</h3>
+
+<% if !@friends.empty? %>
+  <div class="row">
+    <div class="col-sm-9">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @friends.each do |friend| %>
+            <tr>
+              <td><%= friend.full_name %></td>
+              <td><%= friend.email %></td>
+              <td><%= link_to "Unfollow", friendship_path(friend) , class: "btn btn-sm btn-warning", method: :delete, data: { confirm: "Are you sure you want to unfollow #{friend.full_name} ?" } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% else %>
+  <h5>You don't have any friends.</h5>
+<% end %>
+
+

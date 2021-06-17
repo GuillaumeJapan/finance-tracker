@@ -1,0 +1,27 @@
+<div class="results-block">
+  <%= render 'layouts/messages' %>
+</div>
+
+<div class="card card-header results-block">
+  <% if !@persons_found.empty? %>
+    <table class="col-md-12">
+      <tbody>
+        <% @persons_found.each do |person| %>
+          <tr>
+            <td><strong>Name: </strong><%= person.full_name %></td>
+            <td><strong>Email: </strong><%= person.email %></td>
+            <td><strong>Actions: </strong>
+              <% if current_user.not_friend_with?(person.id) %>
+                <%= link_to "Follow this friend", friendships_path(friend: person), class: "btn btn-sm btn-success", method: :post %>
+              <% else %>
+                Already friends
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    Didn't find anyone
+  <% end %>
+</div>

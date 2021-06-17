@@ -28,4 +28,18 @@ class User < ApplicationRecord
     "Anonymous"
   end
 
+  def not_friend_with?(id)
+    !self.friends.exists?(id: id)
+  end
+
+  def self.search_for_friends(to_search)
+    results = search("first_name", to_search) + search("last_name", to_search) + search("email", to_search)
+    results.uniq
+  end
+
+  private
+  def self.search(field, to_search)
+    where("#{field} like ?", "%#{to_search}%")
+  end
+
 end

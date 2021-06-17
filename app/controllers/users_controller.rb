@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
   
   def my_friends
-    @friendss = current_user.friends
+    @friends = current_user.friends
   end
 
 end
