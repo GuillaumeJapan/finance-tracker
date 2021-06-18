@@ -2,8 +2,9 @@
   <%= render 'layouts/messages' %>
 </div>
 
-<div class="card card-header results-block">
-  <% if !@persons_found.empty? %>
+
+<% if @persons_found && !@persons_found.empty? %>
+  <div class="card card-header results-block">
     <table class="col-md-12">
       <tbody>
         <% @persons_found.each do |person| %>
@@ -22,7 +23,5 @@
         <% end %>
       </tbody>
     </table>
-  <% else %>
-    Didn't find anyone
-  <% end %>
-</div>
+  </div>
+<% end %>
